@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    企业理念
+{% endblock %}
+{% block content %}
+    <link href="{%static 'css/product.css'%}" rel="stylesheet">
+ <div class="col-md-12">
+
+
+    <div class="wrap">
+
+
+        <section class="main-container container">
+            <div class="row">
+
+
+                <div class="col-md-12" style="    margin-top: 200px;">
+                    <h3>三丽鸥家族</h3>
+                </div>
+
+                <div class="col-md-12" id="content">
+                    <div class="line" style="width: 100%"></div>
+                    <div class="content">
+                        <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                            <div class="field-items">
+                                <div class="field-item even" property="content:encoded">
+                                    <div><img src="/static/img/familyBanner.png" class="full"/>
+                                    </div>
+                                    <p class="familyDes">三丽鸥肖像明星的特点</p>
+
+                                    <div class="row mtb20">
+
+                                        <div class="col-md-4">
+                                            <div class="grayBlock">
+                                                <p class="font03">独特性</p>
+                                                <p>三丽鸥的造型人物都有其特有的背景故事以及鲜明的个性特征。以“Small Gift,
+                                                    Big Smile”的公司理念为基础，历任设计师们在商品企划的过程中，独自开发孕育出独特的造型图案。<br/><br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="grayBlock">
+                                                <p class="font03">稳定性</p>
+                                                <p>
+                                                    三丽鸥的造型图案，通过不间断的新商品企划产生，保持新颖的形象。此外，并不会象一些从电影或者动画中所诞生的造型图案那样，因为电影或动画停止播出，其接受度就直接会下滑。我们会根据产品特征，通过丰富的创意，开发稳定性高的图案。</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="grayBlock">
+                                                <p class="font03">丰富性</p>
+                                                <p>
+                                                    三丽鸥每年有一万种以上的商品推向市场，涵盖各个季节、各个年龄层，满足顾客不同需求。我们的设计师为迎合不同商品开发的需求，经常开发富有变化的图案。<br/><br/><br/>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <div class="line2"></div>
+                                    </div>
+                                    <div id="block-views-family-block-family" class="block block-views first odd">
+
+
+                                        <ul id="familyList">
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#eacfe0"><img
+                                                        src="/static/img/hellokitty_no_bg.png">
+                                                    <p>Hello Kitty</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#eacfe0"><img
+                                                        src="/static/img/melody_no_bg.png">
+                                                    <p>My Melody</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#faf6ab"><img
+                                                        src="/static/img/twinstars_no_bg.png">
+                                                    <p>LittleTwinStars</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#faf6ab"><img
+                                                        src="/static/img/cinnamoroll_no_bg.png">
+                                                    <p>Cinnamoroll </p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#b0a6d1"><img
+                                                        src="/static/img/maru_no_bg.png">
+                                                    <p>Bad Badtz Maru</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#b9e2f9"><img
+                                                        src="/static/img/keroppi_no_bg.png">
+                                                    <p>Kero Kero Keroppi</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#b0a6d1"><img
+                                                        src="/static/img/kuromi_no_bg.png">
+                                                    <p>Kuromi</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#fae793"><img
+                                                        src="/static/img/gudetama_no_bg.png">
+                                                    <p>Gudetama</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#e9be74"><img
+                                                        src="/static/img/pompom_no_bg.png">
+                                                    <p>Pom Pom Purin</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#f3d1d1"><img
+                                                        src="/static/img/%E5%AE%98%E7%B6%B2%E8%82%96%E5%83%8F_%E7%94%BB%E6%9D%BF%2029%20%E5%89%AF%E6%9C%AC%202.png">
+                                                    <p>Marumofubiyori</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#e1f3f6"><img
+                                                        src="/static/img/%E5%AE%98%E7%B6%B2%E8%82%96%E5%83%8F_%E7%94%BB%E6%9D%BF%2029%20%E5%89%AF%E6%9C%AC%205.png">
+                                                    <p>Hummingmint</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#023577"><img
+                                                        src="/static/img/%E5%AE%98%E7%B6%B2%E8%82%96%E5%83%8F_%E7%94%BB%E6%9D%BF%2029%20%E5%89%AF%E6%9C%AC%203.png">
+                                                    <p>Shinkaizoku</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#bfddf4"><img
+                                                        src="/static/img/%E5%AE%98%E7%B6%B2%E8%82%96%E5%83%8F_%E7%94%BB%E6%9D%BF%2029%20%E5%89%AF%E6%9C%AC%204.png">
+                                                    <p>SANRIO BOYS</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#e85197"><img
+                                                        src="/static/img/%E5%AE%98%E7%B6%B2%E8%82%96%E5%83%8F_%E7%94%BB%E6%9D%BF%2029%20%E5%89%AF%E6%9C%AC.png">
+                                                    <p>Aggretsuko</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#b9e2f9"><img
+                                                        src="/static/img/shinkansen_no_bg.png">
+                                                    <p>Shinkansen</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#e9c5ab"><img
+                                                        src="/static/img/jewel_no_bg.png">
+                                                    <p>Jewelpet</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#eacfe0"><img
+                                                        src="/static/img/sugar_no_bg_0.png">
+                                                    <p>Sugarbunnies</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#77b9eb"><img
+                                                        src="/static/img/coro_no_bg.png">
+                                                    <p>Coro Coro Kuririn</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#c8c1df"><img
+                                                        src="/static/img/wish_no_bg.png">
+                                                    <p>Wishmemell</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#fae793"><img
+                                                        src="/static/img/bonbonribbon_b.png">
+                                                    <p>Bonbonribbon</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#faf6ab"><img
+                                                        src="/static/img/tuxedo_no_bg.png">
+                                                    <p>TuxedoSam</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#e9c5ab"><img
+                                                        src="/static/img/charmmy_no_bg.png">
+                                                    <p>Charmmy Kitty</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#b0dac1"><img
+                                                        src="/static/img/tingchum_no_bg.png">
+                                                    <p>Tinychum</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#faf6ab"><img
+                                                        src="/static/img/pochacco_no_bg.png">
+                                                    <p>Pochacco</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#b9e2f9"><img
+                                                        src="/static/img/runabouts_no_bg.png">
+                                                    <p>The Runabouts</p></a></li>
+                                            <li>
+
+                                                <a href="{% url 'productsApp:honor' %}" bg="#8dc291"><img
+                                                        src="/static/img/usahana_no_bg.png">
+                                                    <p>Usahana</p></a></li>
+
+                                        </ul>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+    </section>
+    </div>
+
+    <script type="text/javascript">
+ $(function () {
+  $("#familyList a").hover(function(){
+    var color = $(this).attr("bg");
+    $(this).css("backgroundColor",color);
+  },function(){
+    $(this).css("backgroundColor","#fff");
+  })
+});
+  </script>
+
+{% endblock %}
+

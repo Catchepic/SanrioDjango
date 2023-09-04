@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block  title%}
+    新闻详情
+{% endblock %}
+
+{% block  content%}
+    <link href="{% static 'css/news.css' %}" rel="stylesheet">
+    <div class="container">
+        <div class="model-details-product-title" style="    margin-top: 200px;
+    font-family: 微软雅黑,serif;">
+            {{ mynew.title }}   <!--mynew为后台传递过来的数据-->
+            <div class="model-foot">
+                发布时间：{{ mynew.publishDate|date:'Y-m-d' }} &nbsp;&nbsp;
+                浏览次数：{{ mynew.views }}
+            </div>
+        </div>
+        <div class="model-details" style="font-family: 幼圆, serif">
+                {{ mynew.description|safe}} <!--safe实现富文本的内容渲染-->
+        </div>
+    </div>
+{% endblock %}
+

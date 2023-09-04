@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block title %}
+    人才招聘
+{% endblock %}
+
+{% block content %}
+    <link href="{% static 'css/contact.css' %}" rel="stylesheet">
+    <!-- 广告横幅 -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>商务合作</h3>
+            </div>
+
+            <div class="col-md-12" id="content">
+                <div class="line"></div>
+
+                <div class="content">
+                    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                        <div class="field-items">
+                            <div class="field-item even" property="content:encoded">
+                                <div><img class="full" src="/static/img/contactbg.JPG" style="    margin-top: 45px;
+    width: 70%;
+    margin-left: 213px;"></div>
+
+                                <div class="row">
+                                    <div class="col-md-6" style="padding-left: 142px;">
+                                        <div class="hasBorder">
+                                            <p>三丽鸥（上海）国际贸易有限公司经三丽鸥株式会社授权，<br/>
+                                                负责中国大陆地区（不含港、澳、台）各造型人物的授权业务。<br/>
+                                                授权范围包括各种有形、无形商品；<br/>
+                                                品牌代言与合作、各类市场活动；<br/>
+                                                大中小型乐园、餐饮娱乐、教育卫生等。<br/>
+                                                此外，三丽鸥（上海）国际贸易有限公司也在中国以直营和加盟并行的方式开设了多间“三丽鸥专卖店”。
+                                            </p>
+
+                                            <p><a href="/scope-business.html"></a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6" style="padding-right: 142px;">
+                                        <div class="hasBorder">
+                                            <p>使用三丽鸥的肖像明星可以立刻带给消费者强烈的印象，<br/>
+                                                让您的产品脱引而出；<br/>
+                                                并可帮您的事业扩大市场受众，<br/>
+                                                大批三丽鸥肖像形象的爱好者是新顾客的不二之选；<br/>
+                                                当然诸多脍炙人口的三丽鸥肖像形象也将提升您的企业知名度。<br/>
+                                                与授权商一起成功，是三丽鸥的坚持。<br/>
+                                                &nbsp;</p>
+
+                                            <p><a href="/family.html"></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <p id="contactDes" class="lead black" style="    padding-left: 127px;
+    padding-right: 127px;">
+                                    选择您想要咨询的业务，并详细介绍您的公司及合作意向内容计划，我们在收到您完整的信息之后会尽快与您联系。【中国内地（大陆）限定，不含港、澳、台】</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 主体内容 -->
+                <div class="container">
+                    <div class="model-details">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="    font-family: 幼圆,serif;">
+                                请填写合作信息
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <form action="." name="resumeForm" method="post" class="form-horizontal" role="form"
+                                          enctype="multipart/form-data" style="    font-family: 幼圆,serif;">
+                                        {% csrf_token %}  <!--规避跨站请求，不加，后台无法接受数据-->
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label text-left">咨询业务</label>
+                                            <div class="col-sm-9">
+                                                {{resumeForm.name|add_class:"form-control"|attr:"placeholder=请填写姓名"}}<!--模板表单变量-->
+
+                                            </div>
+                                            <p class="col-sm-1 control-label must">必填</p>
+                                        </div>
+
+                                        <div class="form-group" id="img">
+                                            <label class="col-sm-2 control-label text-left">肖像选择</label>
+                                            <div class="col-sm-9">
+                                                {{resumeForm.character|add_class:"form-control"|attr:"placeholder=请填写合作肖像"}}<!--模板表单变量-->
+
+                                            </div>
+                                            <p class="col-sm-1 control-label must">必填</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label text-left">公司名称 </label>
+                                            <div class="col-sm-9">
+                                                {{resumeForm.storeName|add_class:"form-control"|attr:"placeholder=请填写公司名称"}}<!--模板表单变量-->
+
+
+                                            </div>
+                                            <p class="col-sm-1 control-label must">必填</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label text-left">公司简介</label>
+                                            <div class="col-sm-9">
+                                                {{resumeForm.storeInfo|add_class:"form-control"|attr:"placeholder=请填写公司简介"}}<!--模板表单变量-->
+
+                                            </div>
+                                            <p class="col-sm-1 control-label must">必填</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label text-left">联系人姓名</label>
+                                            <div class="col-sm-9">
+                                                {{resumeForm.bossName|add_class:"form-control"|attr:"placeholder=请填写联系人姓名"}}<!--模板表单变量-->
+
+                                            </div>
+                                            <p class="col-sm-1 control-label must">必填</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label text-left">联系人电话</label>
+                                            <div class="col-sm-9">
+                                                {{resumeForm.bossNum|add_class:"form-control"|attr:"placeholder=请填写联系人电话"}}<!--模板表单变量-->
+
+                                            </div>
+                                            <p class="col-sm-1 control-label must">必填</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label text-left">Email</label>
+                                            <div class="col-sm-9">
+
+                                                {{resumeForm.email|add_class:"form-control"|attr:"placeholder=请填写email"}}<!--模板表单变量-->
+
+                                            </div>
+                                            <p class="col-sm-1 control-label must">必填</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label text-left">联系地址</label>
+                                            <div class="col-sm-9">
+                                                {{resumeForm.position|add_class:"form-control"|attr:"placeholder=请填写联系地址"}}<!--模板表单变量-->
+
+
+                                            </div>
+                                            <p class="col-sm-1 control-label must">必填</p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2" style="margin-left: 85px;">合作内容描述</label>
+                                            <div class="col-sm-9" style="    margin-left: -85px;
+    margin-top: 12px;
+}">
+                                                {{ resumeForm.experience|add_class:"form-control"|attr:"placeholder=请填写合作内容" }}
+
+                                            </div>
+                                            <p class="col-sm-1 control-label must">必填</p>
+                                        </div>
+                                        {#            <div class="form-group">#}
+                                        {#              <label class="col-sm-2 control-label text-left">验证码</label>#}
+                                        {#              <div class="col-sm-9">#}
+                                        {#                <input type="text" class="input" id="code_num" name="code_num" maxlength="4" /> <img src="/get_code" id="getcode_num" title="看不清，点击换一张" align="absmiddle"></p>#}
+                                        {#              </div>#}
+                                        {#              <p class="col-sm-1 control-label must">必填</p>#}
+                                        {#            </div>#}
+
+                                        <div class="col-md-12">
+                                            <center><input type="submit" class="btn btn-primary" value="提交"/></center>
+                                        </div>
+
+                                    </form>
+
+                                    <script type="text/javascript">
+
+
+                                    </script>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/laydate/laydate.js' %}"></script>
+
+{% endblock %}

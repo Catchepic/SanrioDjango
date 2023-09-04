@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    企业理念
+{% endblock %}
+{% block content %}
+    <link href="{% static 'css/product.css' %}" rel="stylesheet">
+    <link href="{% static 'css/productDetail.css' %}" rel="stylesheet">
+
+    <div class="col-md-12">
+        <h3>三丽鸥家族</h3>
+    </div>
+
+    <div class="line"></div>
+    <div class="field-item even" property="content:encoded">
+    <div><img src="/static/img/familyBanner.png" class="full" style="width: 70%;
+    margin-left: 200px;
+    margin-top: 143px;"/>
+    </div>
+    <div class="container">
+        <div class="row row-3">
+            <!-- 侧边导航栏 -->
+
+            <!-- 说明文字和图片 -->
+            <div class="col-md-9">
+                <div class="model-details-title">
+                    <h3>资料列表</h3>
+                </div>
+             <div class="line" style="width: 130.5%"></div>
+                <div class="model-details" >
+                    {% for doc in docList %}  <!--有几项资料，就循环几次-->
+                        <div class="news-model"  >
+                            <img src="{% static 'img/download3.jpg' %}" style="width: 10%;
+    margin-left: 50px;
+    margin-right: 20px;">
+                            <a href="{% url 'productsApp:getDoc' doc.id %}" style="margin-right: 530px;"><b>{{ doc.title }}</b></a>   <!--资料名称-->
+                            <span>【{{ doc.publishDate|date:"Y-m-d" }}】</span>
+             <div class="line" style="width: 130.5%"></div>
+
+                        </div>
+                    {% endfor %}
+
+                    {% if pageData %}
+                        <div class="paging">
+                            <ul id="pages" class="pagination">
+                                {% if pageData.first %}
+                                    <li><a href="?page=1">1</a></li>
+                                {% endif %}
+                                {% if pageData.left %}
+                                    {% if pageData.left_has_more %}
+                                        <li><span>...</span></li>
+                                    {% endif %}
+                                    {% for i in pageData.left %}
+                                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endfor %}
+                                {% endif %}
+                                <li class="active"><a href="?page={{ pageData.page }}">
+                                    {{ pageData.page }}</a></li>
+                                {% if pageData.right %}
+                                    {% for i in pageData.right %}
+                                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endfor %}
+                                    {% if pageData.right_has_more %}
+                                        <li><span>...</span></li>
+                                    {% endif %}
+                                {% endif %}
+                                {% if pageData.last %}
+                                    <li><a href="?page={{ pageData.total_pages }}">
+                                        {{ pageData.total_pages }}</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

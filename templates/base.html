@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sanrio三丽鸥|{% block title %} {% endblock %}</title>
+      <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="cleartype" content="on">
+
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{%static 'css/style.css'%}" rel="stylesheet">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div id="fixBlock">
+<div id="fixBlockContent">
+<header id="topbar" >
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-md-3 col-md-offset-9 col-xs-offset-6">
+            <img src="/static/img/global.png"  alt= ""/>
+            </div>
+        </div>
+    </div>
+</header>
+<nav role="navigation" class="navbar navbar-inverse">
+    <div class="container">
+            <a href="{% url 'homeApp:home' %}" class="navbar-brand"><img src="/static/img/logo.jpg"  alt=""/></a>
+        </div>
+        <div id="block-block-1" class="block block-block first odd">
+  <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown nav-top">
+          <li id="nav-menu01" class="active dropdown">
+            <a href="#" class="dropdown-toggle on" data-toggle="dropdown">关于三丽鸥</a>
+            <ul class="dropdown-menu" role="menu">
+              <li id="nav-survey" class="dropdown-menu-min"><a href="{% url 'aboutApp:survey' %}">公司简介</a> </li>
+              <li id="nav-idea"><a href="{% url 'aboutApp:idea' %}">企业理念</a></li>
+              <li id="nav-limit"><a href="{% url 'aboutApp:limit' %}">事业范围</a></li>
+              <li id="nav-contact"><a href="{% url 'aboutApp:contact' %}">联系我们</a></li>
+            </ul>
+          </li>
+          <li id="nav-menu02" class="active dropdown"><a href="{% url 'productsApp:survey' %}">三丽鸥家族</a></li>
+          <li id="nav-menu03" class="active dropdown"><a href="{% url 'contactApp:recruit' %}">商务合作</a></li>
+          <li id="nav-menu04" class="active dropdown"> <a href="{% url 'newsApp:news' 'company' %}">新闻动态</a></li>
+          <li id="nav-menu05" class="active dropdown"><a href="{% url 'serviceApp:globalSanrio' %}">三丽鸥全球</a></li>
+        </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+</div>
+
+   {% block content%}
+ {% endblock %}
+
+   <footer id="footer " class="region region-footer"></footer>
+  <div class="region region-bottom">
+      <div id="block-block-2" class="block block-block first odd" style="background-color: #fffbef;">
+  <section id="webMapContent" class="container" >
+    <div class="row">
+      <div class="col-md-9">
+        <div id="webMap" class="clearfix">
+          <div class="webMapList">
+            <ul>
+              <li><a href="{% url 'aboutApp:survey' %}">&gt; 公司简介</a></li>
+              <li><a href="{% url 'aboutApp:idea' %}">&gt; 企业理念</a></li>
+              <li><a href="{% url 'aboutApp:limit' %}">&gt; 事业范围</a></li>
+              <li><a href="{% url 'aboutApp:contact' %}">&gt; 联系我们</a></li>
+            </ul>
+          </div>
+          <div class="webMapList">
+            <ul>
+              <li><a href="{% url 'productsApp:survey' %}">&gt; 三丽鸥家族</a></li>
+            </ul>
+          </div>
+          <div class="webMapList">
+            <ul>
+              <li><a href="{% url 'contactApp:recruit' %}">&gt; 商务合作</a></li>
+            </ul>
+          </div>
+          <div class="webMapList">
+            <ul>
+               <li><a href="{% url 'newsApp:news' 'company' %}">&gt; 新闻动态</a> </li>
+            </ul>
+          </div>
+          <div class="webMapList">
+            <ul>
+              <li><a href="#">&gt; 联系我们</a></li>
+              <li><a href="#">&gt; 版权申明</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+          <div class="col-md-2 ml-2">
+            <img src="/static/img/giftImg1.png" height="200px"  />
+          </div>
+        </div>
+  </section>
+      </div>
+    </div>
+
+    <footer>
+    <div class="container">
+      <div class="row">
+        <div class=" col-md-12" >
+            <a target="_blank" href="#"> </a>
+            三丽鸥 ©2023 SANRIO CO.,LTD.
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script>
+        $('#{{ sub_menu }}').addClass("active")
+        $('#{{ active_menu }}').addClass("active")
+</script>
+
+</html>

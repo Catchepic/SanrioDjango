@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    联系我们
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <img class="img-responsive model-img" src="{% static 'img/kv.jpg' %}">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-3">
+            <div class="col-md-3">
+                <div class="model-title">
+                    关于三丽鸥
+                </div>
+                <div class="model-list">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="survey">
+                            <a href="{% url 'aboutApp:survey' %}">公司简介</a>
+                        </li>
+                        <li class="list-group-item" id="idea">
+                            <a href="{% url 'aboutApp:idea' %}">企业理念</a>
+                        </li>
+                        <li class="list-group-item" id="limit">
+                            <a href="{% url 'aboutApp:limit' %}">事业范围</a>
+                        </li>
+                        <li class="list-group-item" id="contact">
+                            <a href="{% url 'aboutApp:contact' %}">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="model-details-title">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <h3 style="font-family: 幼圆, serif">联系我们</h3>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="model-details" style="margin-left:17px;">
+                            <img class="img-responsive" style="max-width:700px;"
+                                 src="{% static 'img/contactBanner.png' %}">
+                            <style>
+                                #container {
+                                    overflow: hidden;
+                                    width: 100%;
+                                    height: 370px;
+                                    margin: 0;
+                                }
+                            </style>
+                            <script src="http://api.map.baidu.com/api?type=webgl&v=1.0&ak=g6658W10NbfwPv5q5sfXb38ekk3NjQ3N">
+                            </script>
+
+                            <div class="col-md-3">
+
+
+                                <div class="contact-left">
+                                    <h1 style="font-family: 幼圆, serif">
+                                        <strong>三丽鸥有限公司</strong>
+                                        <span>Sanrio</span>
+                                    </h1>
+                                    <ul style="font-family: 幼圆, serif">
+                                        <li><span>咨询电话：</span>0553-2348821</li>
+                                        <li><span>企业传真：</span>0223-4657112</li>
+                                        <li><span>地址：</span>金凤路6号</li>
+                                        <li><span>邮编：</span>9389-29341</li>
+                                        <li><span>网址：www.sanrio.com</span>
+                                            <a href="http://python3web.com">http://DD.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-7" style="margin-top: 15px;margin-left: -20px;">
+                                <div id="container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    //创建和初始化地图函数：
+                    const map = new BMapGL.Map('container');
+                    const point = new BMapGL.Point(113.545882, 22.369369);
+                    map.centerAndZoom(point, 15);
+                    map.enableScrollWheelZoom(true);
+
+                    var marker = new BMapGL.Marker(point, {
+                        enableDragging: true
+                    });
+                    map.addOverlay(marker);
+                </script>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    三丽鸥全球
+{% endblock %}
+
+{% block content %}
+    <link href="{% static 'css/global.css' %}" rel="stylesheet">
+
+    <div class="wrap" style=" font-family: 幼圆,serif;">
+
+    <section class="main-container container">
+        <div class="row" style=" margin-top: 195px;">
+
+
+            <div class="col-md-12">
+                <h3>三丽鸥全球（国家/地区）</h3>
+            </div>
+
+            <div class="col-md-12" id="content">
+                <div class="line" style="width: 100%"></div>
+                <div class="content">
+                    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                        <div class="field-items">
+                            <div class="field-item even" property="content:encoded">
+                                <div>
+                                    <img src="/static/img/sanrio_global_v3.jpg" class="full"
+                                         usemap="#Map"/>
+                                    <map name='Map'>
+                                        <area shape='rect' coords='113,128,229,178'
+                                              href='https://www.sanrio.eu/' target='_blank' title='' alt=''/>
+                                        <area shape='rect' coords='350,145,516,259'
+                                              href='http://www.sanrio.com.cn/' target='_blank' title='' alt=''/>
+                                        <area shape='rect' coords='562,158,700,201'
+                                              href='https://www.sanrio.co.jp/' target='_blank' title='' alt=''/>
+                                        <area shape='rect' coords='559,209,694,251'
+                                              href='https://www.sanrio.com.tw/' target='_blank' title='' alt=''/>
+                                        <area shape='rect' coords='480,93,610,145'
+                                              href='http://sanriokorea.co.kr/' target='_blank' title='' alt=''/>
+                                        <area shape='rect' coords='903,165,1087,241'
+                                              href='https://www.sanrio.com/' target='_blank' title='' alt=''/>
+                                        <area shape='rect' coords='1008,400,1146,467'
+                                              href='https://www.sanrio.com.br/' target='_blank' title='' alt=''/>
+                                    </map>
+                                </div>
+
+
+                                <div id="globeContent">
+
+                                    <ul class="clearfix">
+                                        <li><a href="http://www.sanrio.com.cn/" target="_blank">三丽鸥（中国大陆）</a>
+                                        </li>
+                                        <li><a href="http://www.sanrio.co.jp/" target="_blank">三丽鸥（日本）</a></li>
+                                        <li><a href="http://www.sanrio.com.tw/" target="_blank">三丽鸥（台湾地区）</a>
+                                        </li>
+                                        <li><a href="http://www.sanrioeurope.com/" target="_blank">三丽鸥（欧洲）</a></li>
+                                        <li><a href="http://www.sanriokorea.co.kr/" target="_blank">三丽鸥（韩国）</a>
+                                        </li>
+                                        <li><a href="http://www.sanrio.com/" target="_blank">三丽鸥（美国）</a></li>
+                                        <li><a href="http://www.sanrio.com.br/" target="_blank">三丽鸥（巴西）</a></li>
+                                    </ul>
+                                    <img src="/static/img/hello.png" class="hello">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+        <div id="block-block-8" class="block block-block first last odd">
+
+
+            <script>
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                ga('create', 'UA-72036500-1', 'auto');
+                ga('send', 'pageview');
+
+            </script>
+        </div>
+{% endblock %}
+

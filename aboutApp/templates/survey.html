@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    公司简介
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <img class="img-responsive model-img" src="{% static 'img/kv.jpg' %}">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-3">
+             <div class="col-md-3">
+                <div class="model-title">
+                    关于三丽鸥
+                </div>
+                <div class="model-list">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="survey">
+                            <a href="{% url 'aboutApp:survey' %}">公司简介</a>
+                        </li>
+                        <li class="list-group-item" id="idea">
+                            <a href="{% url 'aboutApp:idea' %}">企业理念</a>
+                        </li>
+                        <li class="list-group-item" id="limit">
+                            <a href="{% url 'aboutApp:limit' %}">事业范围</a>
+                        </li>
+                        <li class="list-group-item" id="contact">
+                            <a href="{% url 'aboutApp:contact' %}">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="model-details-title">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <h3 style="font-family: 幼圆, serif">公司简介</h3>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="model-details"  style="margin-left:17px;" >
+                            <img class="img-responsive" style="max-width:700px;"
+                                 src="{% static 'img/scopeBanner.png' %}">
+                            <p>三丽鸥公司成立于1960年，是全球著名的造型人物品牌发行商。本着礼物传递真情的经营理念，三丽鸥致力于丰富<br>
+                            人际交流的伟大事业。 三丽鸥英文的翻译是Sanrio，旗下有五百多个肖像明星。本着礼物传递真情的经营理念，三<br>
+                            丽鸥致力于丰富人际交流的伟大事业，赋予礼品全新的意义-礼物不仅是用来表达对他人的尊重，信任，友爱，也可<br>
+                            以成为与自己内心世界沟通的桥梁。在帮助人们追求幸福，互求相互理解，彼此建立良好友谊的同时，三丽鸥也为人<br>
+                            提供精神上的休闲与满足。 创办人认为人类文明都是从河流开始发源，如底格里斯河、尼罗河与黄河，而这些河流<br>
+                            孕育出世界上三个最古老文明。西班牙文中｢San｣是神圣之意， ｢Rio｣则指河流，因此创办人以神圣河流为名，表达<br>
+                            对人类文明的敬意，进而发展出以「Social Communication」为企业宗旨的三丽鸥公司, 「Social  Communication」,<br>
+                             也就是在特别的时间、节日，透过精美但却不会让收受者觉得负担的小礼物来表情意，建立维系彼此的友谊。因而三<br>
+                             丽鸥设计的肖像明星，超越了单纯的设计本身的价值，成为“传达心意，培养友情”的使者。三丽鸥（上海）国际贸<br>
+                             易公司成立于2003年，是日本三丽鸥株式会社授权成立的全资子公司，负责中国大陆地区（不含港、澳、台）的造型<br>
+                              人物授权业务，以及通过总经销商经营、管理三丽鸥专卖店业务。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

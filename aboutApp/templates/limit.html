@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    企业理念
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <img class="img-responsive model-img" src="{% static 'img/kv.jpg' %}">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-3">
+            <div class="col-md-3">
+                <div class="model-title">
+                    关于三丽鸥
+                </div>
+                <div class="model-list">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="survey">
+                            <a href="{% url 'aboutApp:survey' %}">公司简介</a>
+                        </li>
+                        <li class="list-group-item" id="idea">
+                            <a href="{% url 'aboutApp:idea' %}">企业理念</a>
+                        </li>
+                        <li class="list-group-item" id="limit">
+                            <a href="{% url 'aboutApp:limit' %}">事业范围</a>
+                        </li>
+                        <li class="list-group-item" id="contact">
+                            <a href="{% url 'aboutApp:contact' %}">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="model-details-title">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <h3 style="font-family: 幼圆, serif ">事业范围</h3>
+                            <div class="line" style="width: 100%"></div>
+                        </div>
+                        {% for store in storeList %}
+                            <div class="row">
+                                <div class="col-md-6" style="margin-left: 15px">
+                                    {% for img in store.storeImgs.all %}
+                                        {% if forloop.first %}
+                                            <a href="#" class="thumbnail row-4">
+                                                <img class="img-responsive" src="{{ img.photo.url }}">
+                                            </a>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="col-md-5">
+                                    <h3 style="font-family: 幼圆, serif ">{{ store.title|truncatechars:"20" }}</h3>
+                                    <p style="font-family: 幼圆, serif ">{{ store.description|truncatechars:"150"|linebreaks }}</p>
+                                    <div class="thumbnail row-5">
+                                        <div class="caption">
+                                            <a href="{% url 'aboutApp:storeDetail' store.id %}"
+                                               style="font-family: 幼圆, serif " class="btn btn-primary" role="button">
+                                                查看详情
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        {% if pageData %}
+                            <div class="paging">
+                                <ul id="pages" class="pagination pagination-sm pagination-xs">
+                                    {% if pageData.first %}
+                                        <li><a href="?page=1">1</a></li>
+                                    {% endif %}
+                                    {% if pageData.left %}
+                                        {% if pageData.left_has_more %}
+                                            <li><span>...</span></li>
+                                        {% endif %}
+                                        {% for i in pageData.left %}
+                                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                            <!--单击时会将参数page的值封装到request中，后台从request中得到page变量值-->
+                                        {% endfor %}
+                                    {% endif %}
+                                    <li class="active"><a href="?page={{ pageData.page }}">{{ pageData.page }}</a></li>
+                                    {% if pageData.right %}
+                                        {% for i in pageData.right %}
+                                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                        {% endfor %}
+                                        {% if pageData.right_has_more %}
+                                            <li><span>...</span></li>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if pageData.last %}
+                                        <li><a href="?page={{ pageData.total_pages }}">{{ pageData.total_pages }}</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

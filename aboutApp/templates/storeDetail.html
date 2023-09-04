@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    企业理念
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <img class="img-responsive model-img" src="{% static 'img/kv.jpg' %}">
+        </div>
+    </div>
+<div class="container">
+ <div class="row row-3">
+            <div class="col-md-3">
+                <div class="model-title">
+                    关于三丽鸥
+                </div>
+                <div class="model-list">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="survey">
+                            <a href="{% url 'aboutApp:survey' %}">公司简介</a>
+                        </li>
+                        <li class="list-group-item" id="idea">
+                            <a href="{% url 'aboutApp:idea' %}">企业理念</a>
+                        </li>
+                        <li class="list-group-item" id="limit">
+                            <a href="{% url 'aboutApp:limit' %}">事业范围</a>
+                        </li>
+                        <li class="list-group-item" id="contact">
+                            <a href="{% url 'aboutApp:contact' %}">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                <div class="model-details-product-title">
+            {{ store.title }}   <!--product为后台传递过来的数据-->
+            <br>
+            浏览量：{{ store.views }}
+                            <div class="line" style="width: 72%"></div>
+
+        </div>
+        <div class="model-details">
+         <h3 style="font-family: 幼圆,serif;">店铺介绍</h3>
+            <p  style="font-family: 幼圆,serif;">
+                {{ store.description|linebreaks }}
+            </p>
+            {% for img in store.storeImgs.all %}
+            <div class="row-4">
+            <h3 style="font-family: 幼圆,serif;"> 店铺图片</h3>
+                <img class="img-responsive" style="width: 60%" src="{{ img.photo.url }}">
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+            </div>
+
+
+{% endblock %}
+
